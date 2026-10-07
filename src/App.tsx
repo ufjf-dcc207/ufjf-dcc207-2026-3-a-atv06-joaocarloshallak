@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <h1>EMOJI</h1>
-      <Emoji />
+      <Emoji mode="angry" />
     </>
   )
 }
