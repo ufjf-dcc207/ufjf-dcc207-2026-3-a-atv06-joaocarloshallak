@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import './Emoji.css';
+import Atributo from './Atributo';
 
-type EMOJI_KEYS = "happy" | "sad" | "angry" | "surprised" | "laughing";
+type EMOJI_KEYS = "happy" | "dead" | "sick" | "surprised" | "laughing";
 const EMOJI_MAP = new Map<string, string>([
   ["happy", "😀"],
-  ["sad", "😢"],
-  ["angry", "😠"],
+  ["dead", "😢"],
+  ["sick", "😠"],
   ["surprised", "😮"],
   ["laughing", "😂"],
 ]);
@@ -59,11 +60,14 @@ export default function Emoji() {
     
     <div className='acoes'>
         <button onClick={HappyClick}>Happy</button>
-        <button onClick={SickClick}>Happy</button>
-        <button onClick={deadClick}>Happy</button>
-        <button onClick={cicleClick}>Happy</button>
+        <button onClick={SickClick}>Sick</button>
+        <button onClick={deadClick}>Dead</button>
+        <button onClick={cicleClick}>Cicle</button>
+        
     </div>
-    
+
+    <Atributo></Atributo>
+
     </>
       );
 }
