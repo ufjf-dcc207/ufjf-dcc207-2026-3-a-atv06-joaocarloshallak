@@ -53,8 +53,7 @@ export default function Emoji(){
     return (
         <>
             <div className="emoji">
-                {EMOJI_MAP.get(situacao) || "😶"}
-            </div>
+              {EMOJI_MAP.get(situacao) || "😶"}
             <div className="atributos">
             <Atributo icone="♥" valor={saude}></Atributo>
             <Atributo icone="⚡" valor={energia}></Atributo>
@@ -62,6 +61,7 @@ export default function Emoji(){
             <Atributo icone="🍔" valor={comida}></Atributo>
 
             </div>
+    
             
 
             <div className = "acoes">
@@ -70,6 +70,7 @@ export default function Emoji(){
                 <button onClick={LigarDesligar}>Ligar/Desligar</button>
                 <button onClick={Ciclo}>Ciclo</button>
                 <button onClick={LigarDesligar}>{luz ? "Desligar Luz" : "Ligar Luz"}</button>
+            </div>
             </div>
             
           
