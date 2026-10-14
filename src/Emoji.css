@@ -5,3 +5,9 @@
 button{
     margin: 50px 0 0 0;
 }
+
+.face {
+    font-size: 4em;
+    display: grid;
+    place-content: center;
+}

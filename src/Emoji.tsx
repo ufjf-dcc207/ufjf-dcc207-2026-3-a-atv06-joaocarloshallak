@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './Emoji.css'
 import LifeBar from './LifeBar';
+import Atributo from './Atributo';
 
 type EMOJI_KEYS = "happy" | "sick" | "dead";
 const EMOJI_MAP = new Map<EMOJI_KEYS, string>([
@@ -11,51 +12,48 @@ const EMOJI_MAP = new Map<EMOJI_KEYS, string>([
 
 
 
+
+
 export default function Emoji(){
-    const [status, setStatus] = useState<EMOJI_KEYS>('sick')
-    function happyClick(){
-        console.log("Status: " + status);
-        setStatus("happy");
-        console.log("Status: " + status);       
+  const [situacao, setSituacao] = useState<EMOJI_KEYS>('happy');
+  const [saude, setSaude] = useState<number>(4);
+  const [energia, setEnergia] = useState<number>(3);
+  const [agua, setAgua] = useState<number>(2);
+  const [comida, setComida] = useState<number>(1);
+
+
+
+
+    function Alimentar(){  
+      setComida((Math.min(5, comida + 1)));
+
     }
-    function sickClick(){
-        console.log("Status: " + status);
-        setStatus("sick");
-        console.log("Status: " + status);
+    function Hidratar(){
+      setAgua((Math.min(5, agua + 1)));
     }
-    function deadClick(){
-        console.log("Status: " + status);
-        setStatus("dead");
-        console.log("Status: " + status);
+    function LigarDesligar(){
     }
-    function cicleClick(){
-        switch (status){
-            case "dead":
-                setStatus("happy");
-                break;
-            case "happy":
-                setStatus("sick");
-                break;
-            case "sick":
-                setStatus("dead");
-                break;
-            default:
-                setStatus("happy");
-        }
+    function Ciclo(){
     }
     return (
         <>
-            <div className="emoji">
-                {EMOJI_MAP.get(status)||"😶"}
+            <div className="face">
+                {EMOJI_MAP.get(situacao) || "😶"}
             </div>
-            
+            <div className="atributos">
+            <Atributo icone="♥" valor={saude}></Atributo>
+            <Atributo icone="⚡" valor={energia}></Atributo>
+            <Atributo icone="💧" valor={agua}></Atributo>
+            <Atributo icone="🍔" valor={comida}></Atributo>
+            </div>
             <div className = "acoes">
-                <button onClick={happyClick}>Happy</button>
-                <button onClick={sickClick}>Sick</button>
-                <button onClick={deadClick}>Dead</button>
-                <button onClick={cicleClick}>Cicle</button>
+                <button onClick={Alimentar}>Alimentar</button>
+                <button onClick={Hidratar}>Hidratar</button>
+                <button onClick={LigarDesligar}>Ligar/Desligar</button>
+                <button onClick={Ciclo}>Ciclo</button>
             </div>
-            <LifeBar></LifeBar>
+          
+          
         </>
     )
     
