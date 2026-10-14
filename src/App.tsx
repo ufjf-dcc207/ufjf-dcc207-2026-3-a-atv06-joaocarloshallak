@@ -1,12 +1,12 @@
-import Emoji from "./Emoji"
-
-
+import './App.css'
+import './Emoji.tsx'
+import Emoji from './Emoji.tsx'
 function App() {
 
   return (
     <>
-      <h1>EMOJI</h1>
-      <Emoji mode="angry" />
+      <h1>titulo</h1>
+      <Emoji></Emoji>
     </>
   )
 }
